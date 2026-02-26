@@ -1,0 +1,64 @@
+{#
+  MALFUFA — master.twig
+  Main layout — all pages extend this.
+  Salla Twilight Engine uses Twig templating.
+#}
+<!DOCTYPE html>
+<html lang="{{ app.locale.code }}" dir="{{ app.locale.code == 'ar' ? 'rtl' : 'ltr' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ store.name }}{% endblock %} | MALFUFA</title>
+
+  {# Salla required SEO / meta hooks #}
+  {% hook 'head' %}
+
+  {# Google Fonts — Tajawal works for both Arabic and English #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  {# Main theme stylesheet #}
+  <link rel="stylesheet" href="{{ 'styles/theme.css' | asset }}">
+
+  {# Page-specific styles block #}
+  {% block styles %}{% endblock %}
+</head>
+
+<body class="{{ app.locale.code == 'ar' ? 'rtl' : 'ltr' }}">
+
+  {# Salla required body open hook #}
+  {% hook 'body_open' %}
+
+  {# Header Component #}
+  {% include 'components/header/header.twig' %}
+
+  {# Main Content #}
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {# Footer Component #}
+  {% include 'components/footer/footer.twig' %}
+
+  {# Frame CDN config — edit this after uploading frames #}
+  <script>
+    window.MALFUFA = {
+      cdnUrl: '{{ settings.hero_cdn_url }}',
+      frameCount: {{ settings.hero_frame_count | default(60) }},
+      locale: '{{ app.locale.code }}'
+    };
+  </script>
+
+  {# Theme JS files #}
+  <script src="{{ 'js/theme.js' | asset }}" defer></script>
+  <script src="{{ 'js/scroll-animation.js' | asset }}" defer></script>
+
+  {# Page-specific scripts block #}
+  {% block scripts %}{% endblock %}
+
+  {# Salla required scripts hook — MUST be last before </body> #}
+  {% hook 'scripts' %}
+
+</body>
+</html>

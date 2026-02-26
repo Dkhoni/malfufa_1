@@ -1,0 +1,44 @@
+{#
+  MALFUFA — scroll-animation.twig
+  Scroll-linked canvas animation component.
+  Include this on the homepage above featured products.
+#}
+<section class="scroll-canvas-wrapper" id="scroll-anim">
+  <div class="canvas-sticky">
+
+    {# The canvas element — JS draws frames onto this #}
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    {# Text overlay on top of the animation #}
+    <div class="canvas-overlay">
+      <div class="canvas-overlay-inner">
+        <p class="scroll-eyebrow">Est. 2018</p>
+        <h1 class="scroll-headline">
+          {{ app.locale.code == 'ar' ? settings.hero_headline_ar : settings.hero_headline_en }}
+        </h1>
+        <p class="scroll-sub">
+          {{ app.locale.code == 'ar' ? settings.hero_sub_ar : settings.hero_sub_en }}
+        </p>
+        <a href="{{ link('products') }}" class="scroll-cta">
+          {{ trans('hero.order_now') }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    {# Scroll progress bar at bottom of canvas #}
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    {# Scroll hint arrow #}
+    <div class="scroll-hint" id="scroll-hint">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6,9 12,15 18,9"/>
+      </svg>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "theme_name": "MALFUFA",
+  "repo_url": "https://github.com/Dkhoni/malfufa_1",
+  "support_url": "https://salla.dev",
+  "settings": [
+    {
+      "type": "string",
+      "id": "hero_cdn_url",
+      "label": "Frame Images CDN Base URL",
+      "format": "text",
+      "value": ""
+    },
+    {
+      "type": "string",
+      "id": "hero_headline_en",
+      "label": "Hero Headline (English)",
+      "format": "text",
+      "value": "Baked with Love"
+    },
+    {
+      "type": "string",
+      "id": "hero_headline_ar",
+      "label": "Hero Headline (Arabic)",
+      "format": "text",
+      "value": "مخبوزات بحب"
+    },
+    {
+      "type": "string",
+      "id": "hero_sub_en",
+      "label": "Hero Subtext (English)",
+      "format": "textarea",
+      "value": "Fresh pastries crafted every morning in Riyadh"
+    },
+    {
+      "type": "string",
+      "id": "hero_sub_ar",
+      "label": "Hero Subtext (Arabic)",
+      "format": "textarea",
+      "value": "معجنات طازجة تصنع كل صباح في الرياض"
+    },
+    {
+      "type": "boolean",
+      "id": "topnav_is_dark",
+      "label": "Dark Header",
+      "format": "switch",
+      "selected": true
+    }
+  ],
+  "features": [
+    "component-featured-products",
+    "component-photos-slider",
+    "component-products-slider",
+    "component-store-features"
+  ],
+  "components": [
+    {
+      "name": "scroll-animation",
+      "title": "Scroll Canvas Animation",
+      "icon": "sicon-image-carousel",
+      "path": "home.scroll-animation",
+      "fields": [
+        {
+          "id": "frame_count",
+          "type": "number",
+          "format": "number",
+          "label": "Number of Frames",
+          "value": 60
+        }
+      ]
+    }
+  ]
+}

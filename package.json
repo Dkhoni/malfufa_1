@@ -1,0 +1,13 @@
+{
+  "name": "malfufa-theme",
+  "version": "1.0.0",
+  "description": "MALFUFA Bakery Salla Theme",
+  "scripts": {
+    "dev": "salla theme preview",
+    "build": "salla theme build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@salla.sa/twilight": "latest"
+  }
+}

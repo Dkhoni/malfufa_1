@@ -1,0 +1,71 @@
+{#
+  MALFUFA — footer.twig
+#}
+<footer class="malfufa-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <a href="{{ link('home') }}" class="footer-logo">MALFUFA</a>
+      <p>{{ trans('footer.tagline') }}</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter / X" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Snapchat" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>{{ trans('footer.quick_links') }}</h4>
+      <ul>
+        <li><a href="{{ link('products') }}">{{ trans('footer.menu') }}</a></li>
+        <li><a href="{{ link('page', 'about') }}">{{ trans('footer.about') }}</a></li>
+        <li><a href="{{ link('page', 'contact') }}">{{ trans('footer.contact') }}</a></li>
+        <li><a href="{{ link('page', 'faq') }}">{{ trans('footer.faq') }}</a></li>
+        <li><a href="{{ link('page', 'branches') }}">{{ trans('footer.branches') }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>{{ trans('footer.contact_us') }}</h4>
+      <p>📞 +966 11 123 4567</p>
+      <p>✉️ hello@malfufa.com</p>
+      <p>📍 {{ trans('footer.address') }}</p>
+      <div class="footer-apps">
+        <a href="#" class="app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+        <a href="#" class="app-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2.07 2.07 0 0 0 2.07-.15l.06-.06 11.62-6.7-.06-.07-3.47-3.46zm17.16-10.29a2.07 2.07 0 0 0 0-3.62L17.2 8.08l-3.84 3.84 3.84 3.83zm-16.5-10A2.07 2.07 0 0 0 2 5.24v13.5a2.07 2.07 0 0 0 1.84 2.07L13.6 12z"/></svg>
+          Google Play
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ "now" | date("Y") }} MALFUFA. {{ trans('footer.rights') }}</p>
+    <div class="footer-payments">
+      <span>VISA</span>
+      <span>Mastercard</span>
+      <span>Mada</span>
+      <span>Apple Pay</span>
+      <span>STC Pay</span>
+    </div>
+  </div>
+</footer>

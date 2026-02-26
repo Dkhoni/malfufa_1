@@ -1,0 +1,53 @@
+{#
+  MALFUFA — index.twig (Homepage)
+  Extends master layout.
+#}
+{% extends 'layouts/master.twig' %}
+
+{% block title %}{{ trans('home.title') }}{% endblock %}
+
+{% block content %}
+
+  {# Scroll Canvas Hero Animation #}
+  {% include 'components/home/scroll-animation.twig' %}
+
+  {# Featured Products Grid #}
+  {% include 'components/home/featured-products.twig' %}
+
+  {# Bakery Story / About Section #}
+  <section class="story-section">
+    <div class="story-inner">
+      <div class="story-text">
+        <p class="scroll-eyebrow">{{ trans('story.label') }}</p>
+        <h2>{{ trans('story.title') }}</h2>
+        <p>{{ trans('story.body') }}</p>
+        <a href="{{ link('page', 'about') }}" class="btn-outline">
+          {{ trans('story.cta') }}
+        </a>
+      </div>
+      <div class="story-image">
+        <div class="story-image-placeholder"></div>
+      </div>
+    </div>
+  </section>
+
+  {# Categories Banner #}
+  <section class="categories-section">
+    <div class="section-header">
+      <h2>{{ trans('home.categories_title') }}</h2>
+    </div>
+    <div class="categories-grid">
+      {% for category in categories %}
+        <a href="{{ category.url }}" class="category-card">
+          {% if category.image %}
+            <img src="{{ category.image }}" alt="{{ category.name }}" loading="lazy">
+          {% else %}
+            <div class="category-no-image"></div>
+          {% endif %}
+          <span class="category-name">{{ category.name }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

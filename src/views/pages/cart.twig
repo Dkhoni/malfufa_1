@@ -1,0 +1,50 @@
+{#
+  MALFUFA — cart.twig
+#}
+{% extends 'layouts/master.twig' %}
+
+{% block title %}{{ trans('cart.title') }}{% endblock %}
+
+{% block content %}
+<div class="cart-page">
+  <h1 class="page-title">{{ trans('cart.title') }}</h1>
+
+  {% if cart.count > 0 %}
+    <div class="cart-layout">
+      <div class="cart-items">
+        {% for item in cart.items %}
+          <div class="cart-item" data-item-id="{{ item.id }}">
+            <img src="{{ item.product.thumbnail.url }}" alt="{{ item.product.name }}" class="cart-item-img">
+            <div class="cart-item-info">
+              <h3>{{ item.product.name }}</h3>
+              <p>{{ item.price.amount | currency }}</p>
+            </div>
+            <div class="cart-item-qty">
+              <button onclick="updateCartItem('{{ item.id }}', {{ item.quantity - 1 }})">−</button>
+              <span>{{ item.quantity }}</span>
+              <button onclick="updateCartItem('{{ item.id }}', {{ item.quantity + 1 }})">+</button>
+            </div>
+            <button class="cart-item-remove" onclick="removeCartItem('{{ item.id }}')">✕</button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="cart-summary">
+        <h3>{{ trans('cart.summary') }}</h3>
+        <div class="cart-total-row">
+          <span>{{ trans('cart.subtotal') }}</span>
+          <span>{{ cart.subtotal | currency }}</span>
+        </div>
+        <a href="{{ link('checkout') }}" class="scroll-cta checkout-btn">
+          {{ trans('cart.checkout') }}
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <div class="cart-empty">
+      <p>{{ trans('cart.empty') }}</p>
+      <a href="{{ link('products') }}" class="scroll-cta">{{ trans('cart.shop_now') }}</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

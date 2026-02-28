@@ -1,43 +1,46 @@
 {
   "version": "1.0.0",
-  "theme_name": "MALFUFA",
-  "repo_url": "https://github.com/Dkhoni/malfufa_1",
-  "support_url": "https://salla.dev",
-  "settings": [
-    {
-      "type": "string",
-      "id": "hero_cdn_url",
-      "label": "Frame Images CDN Base URL",
-      "format": "text",
-      "value": ""
-    },
-    {
-      "type": "string",
-      "id": "hero_headline_en",
-      "label": "Hero Headline English",
-      "format": "text",
-      "value": "Baked with Love"
-    },
-    {
-      "type": "string",
-      "id": "hero_headline_ar",
-      "label": "Hero Headline Arabic",
-      "format": "text",
-      "value": "مخبوزات بحب"
-    },
-    {
-      "type": "boolean",
-      "id": "topnav_is_dark",
-      "label": "Dark Header",
-      "format": "switch",
-      "selected": true
-    }
-  ],
+  "theme_name": {
+    "ar": "ملفوفة",
+    "en": "MALFUFA"
+  },
+  "repository": "https://github.com/Dkhoni/malfufa_1",
+  "author_email": "hello@malfufa.com",
   "features": [
     "component-featured-products",
     "component-photos-slider",
     "component-products-slider",
     "component-store-features"
+  ],
+  "settings": [
+    {
+      "id": "topnav_is_dark",
+      "type": "boolean",
+      "format": "switch",
+      "label": "Dark Header",
+      "selected": true
+    },
+    {
+      "id": "hero_cdn_url",
+      "type": "string",
+      "format": "text",
+      "label": "Frame Images CDN Base URL",
+      "value": ""
+    },
+    {
+      "id": "hero_headline_en",
+      "type": "string",
+      "format": "text",
+      "label": "Hero Headline (English)",
+      "value": "Baked with Love"
+    },
+    {
+      "id": "hero_headline_ar",
+      "type": "string",
+      "format": "text",
+      "label": "Hero Headline (Arabic)",
+      "value": "مخبوزات بحب"
+    }
   ],
   "components": [
     {

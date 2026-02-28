@@ -1,11 +1,8 @@
 {
   "version": "1.0.0",
-  "theme_name": {
-    "ar": "ملفوفة",
-    "en": "MALFUFA"
-  },
-  "repository": "https://github.com/Dkhoni/malfufa_1",
-  "author_email": "hello@malfufa.com",
+  "theme_name": "MALFUFA",
+  "repo_url": "https://github.com/Dkhoni/malfufa_1",
+  "support_url": "https://salla.dev",
   "features": [
     "component-featured-products",
     "component-photos-slider",
@@ -18,7 +15,7 @@
       "type": "boolean",
       "format": "switch",
       "label": "Dark Header",
-      "selected": true
+      "selected": false
     },
     {
       "id": "hero_cdn_url",
@@ -31,14 +28,14 @@
       "id": "hero_headline_en",
       "type": "string",
       "format": "text",
-      "label": "Hero Headline (English)",
+      "label": "Hero Headline English",
       "value": "Baked with Love"
     },
     {
       "id": "hero_headline_ar",
       "type": "string",
       "format": "text",
-      "label": "Hero Headline (Arabic)",
+      "label": "Hero Headline Arabic",
       "value": "مخبوزات بحب"
     }
   ],
